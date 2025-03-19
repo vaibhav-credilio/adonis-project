@@ -3,20 +3,18 @@ import User from 'App/Models/User'
 
 export default class extends BaseSeeder {
   public async run () {
- 
-
-
-    User.createMany([
+   await User.createMany([
       {
-        mobileNo: '1234567890',
-        name: 'John Doe',
+        mobileNo: '9975550492',
+        name: 'legend killer',
         role: 'admin'
       },
       {
-        mobileNo: '0987654321',
-        name: 'Jane Doe',
+        mobileNo: '8308869173',
+        name: 'vaibhav kamble',
         role: 'customer'
       }
     ])
   }
 }
+
