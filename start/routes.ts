@@ -40,4 +40,5 @@ Route.group(() => {
 
 Route.group(()=>{
   Route.post('/', 'ProfilesController.createOrUpdate')
+  Route.post("/logout",'ProfilesController.logout')
 }).middleware(['auth']).prefix('/api/v1/profile')
