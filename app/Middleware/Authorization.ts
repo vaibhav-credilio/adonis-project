@@ -1,5 +1,6 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
+
 type Action = 'viewCustomer' | 'updateCustomer' | 'deleteCustomer'
 
 export default class Authorization {
@@ -22,5 +23,6 @@ export default class Authorization {
     }
     
     await next() 
+
   }
 }

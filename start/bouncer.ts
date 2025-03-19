@@ -8,6 +8,7 @@
 import Bouncer from '@ioc:Adonis/Addons/Bouncer'
 import User from 'App/Models/User'
 
+
 Bouncer.define('viewCustomer', (admin: User) => ['admin'].includes(admin.role))
 Bouncer.define('updateCustomer', (admin: User) => ['admin','customer'].includes(admin.role))
 Bouncer.define('deleteCustomer', (admin: User) => admin.role === 'admin')
