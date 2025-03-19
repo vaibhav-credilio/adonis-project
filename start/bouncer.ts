@@ -6,13 +6,12 @@
  */
 
 import Bouncer from '@ioc:Adonis/Addons/Bouncer'
-import Customer from 'App/Models/Customer'
+import User from 'App/Models/User'
 
-Bouncer.define('createCustomer', (admin: Customer) => admin.role === 'admin')
-Bouncer.define('viewCustomer', (admin: Customer) => ['admin'].includes(admin.role))
-Bouncer.define('updateCustomer', (admin: Customer) => ['admin', 'editor','customer'].includes(admin.role))
-Bouncer.define('deleteCustomer', (admin: Customer) => admin.role === 'admin')
 
+Bouncer.define('viewCustomer', (admin: User) => ['admin'].includes(admin.role))
+Bouncer.define('updateCustomer', (admin: User) => ['admin','customer'].includes(admin.role))
+Bouncer.define('deleteCustomer', (admin: User) => admin.role === 'admin')
 
 /*
 |--------------------------------------------------------------------------
