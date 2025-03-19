@@ -30,15 +30,13 @@ Route.group(()=>{
   Route.post('/verify-otp', 'AuthController.verifyOTP')
 }).prefix('/api/v1/auth')
 
-
 Route.group(() => {
   Route.get('/customers', 'AdminsController.getCustomerList')
   Route.get('/customers/:id', 'AdminsController.getCustomerProfile')
 })
-  .middleware(['auth', 'role:admin']).prefix('/api/v2')
-
+  .middleware(['auth', 'authorization:viewCustomer',]).prefix('/api/v2')
 
 Route.group(()=>{
   Route.post('/', 'ProfilesController.createOrUpdate')
   Route.post("/logout",'ProfilesController.logout')
-}).middleware(['auth']).prefix('/api/v1/profile')
+}).middleware(['auth','authorization:updateCustomer']).prefix('/api/v1/profile')
